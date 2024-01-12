@@ -1,37 +1,61 @@
-# installation
+# Typescript Unit Testing
 
-Foobar is a Python library for dealing with word pluralization.
+typescript project with unit test
 
-## Installation
+## Add Typescript to the Project
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Installing the TypeScript Compiler
 
 ```bash
-pip install foobar
+npm install -g typescript
 ```
 
-## Usage
+Verify installation
 
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
+```bash
+tsc -v
 ```
 
-## Contributing
+use npm to initiate a new project
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+```bash
+npm init -y
+```
 
-Please make sure to update tests as appropriate.
+Adding TypeScript to the Project
 
-## License
+```bash
+npm install typescript --save-dev
+```
 
-[MIT](https://choosealicense.com/licenses/mit/)
+## Installing the Testing Tools
+
+adding Jest as a development dependency
+
+```bash
+npm install jest --save-dev
+```
+
+```bash
+npm install ts-jest --save-dev
+```
+```bash
+npm install @types/jest --save-dev
+```
+
+create an additional file called “jest.config.js”
+
+```typescript
+// jest.config.js
+/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
+module.exports = {
+    preset: "ts-jest",
+    testEnvironment: "node",
+  }
+```
+
+## Running Test
+
+```bash
+npm test
+```
